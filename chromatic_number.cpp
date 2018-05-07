@@ -1,10 +1,6 @@
 /**
- *  @brief   Kattis - NAME 
+ *  @brief   Calculating Chromatic Number 
  *  @author  Donald Dong (@donaldong)
- *  @date    MM/DD/YYYY
- *  
- *  + Binary Search
- *  + DFS
  */
 
 #include <algorithm>
@@ -45,6 +41,7 @@ inline void print(string&);
 
 struct node {
     int col = -1;
+    int c;
     vector<node*> neigh;
 };
 
@@ -60,6 +57,7 @@ bool dfs(node *n) {
     rep(i, 0, C.size()) {
         if (C[i]) continue;
         n->col = i;
+        n->c = i;
         bool f = true;
         for (auto next : n->neigh) {
             if (next->col != -1) continue;
@@ -108,6 +106,8 @@ int main() {
         else lo = col + 1;
     }
     cout << lo << endl;
+    for (auto &e : N) cout << e.c << " ";
+    cout << endl;
     return 0;
 }
 
