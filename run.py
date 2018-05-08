@@ -5,7 +5,7 @@ with open('connected-n9m18.csv', 'w') as csvfile:
     fieldnames = ['chromatic_number', 'chromatic_index', 'hamiltonian_path', 'hamiltonian_cycle']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
-    for i in range(10):
+    for i in range(100000):
         p = subprocess.Popen(['python3', 'gnm.py'], 
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, err = p.communicate(input=b'9 18')
