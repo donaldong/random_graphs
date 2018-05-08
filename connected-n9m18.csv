@@ -1,0 +1,11 @@
+chromatic_number,chromatic_index,hamiltonian_path,hamiltonian_cycle
+4,6,True,True
+4,6,True,True
+4,7,True,False
+4,6,True,True
+4,7,True,True
+3,5,True,True
+4,6,True,False
+3,6,True,True
+4,6,True,True
+3,6,True,True

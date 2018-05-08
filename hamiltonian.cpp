@@ -128,17 +128,17 @@ int main() {
         }
         N[i].i = i;
     }
-    cout << "Path: " << endl;
     if (path()) {
+        cout << 'p' << endl;
         rep(i, 0, n) {
-            cout << N[i].p << " -> " << i << endl;  
+            cerr << N[i].p << " -> " << i << endl;  
         }
     }
     cout << endl;
-    cout << "Cycle: " << endl;
     if (cycle()) {
+        cout << 'c' << endl;
         rep(i, 0, n) {
-            cout << N[i].p << " -> " << i << endl;  
+            cerr << N[i].p << " -> " << i << endl;  
         }
     }
     cout << endl;

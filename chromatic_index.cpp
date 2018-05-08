@@ -127,9 +127,10 @@ int main() {
     if (!colorable(E, c)) {
         colorable(E, ++c);
     }
-    cout << c << "(d:" << max_degree << ")" << endl;
+    cout << c << endl;
+    cerr << "d:" << max_degree << endl;
     for (auto &e : E) {
-        printf("%d -> %d: %d\n", e->src->i, e->dest->i, e->c);
+        cerr << e->src->i << " -> " << e->dest->i << ": " << e->c << endl;
     }
     return 0;
 }

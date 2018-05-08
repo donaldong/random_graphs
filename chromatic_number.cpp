@@ -106,8 +106,8 @@ int main() {
         else lo = col + 1;
     }
     cout << lo << endl;
-    for (auto &e : N) cout << e.c << " ";
-    cout << endl;
+    for (auto &e : N) cerr << e.c << " ";
+    cerr << endl;
     return 0;
 }
 
