@@ -1,14 +1,15 @@
 import subprocess
 import csv
 
-with open('connected-n9m18.csv', 'w') as csvfile:
+with open('connected-n9m27.csv', 'w') as csvfile:
     fieldnames = ['chromatic_number', 'chromatic_index', 'hamiltonian_path', 'hamiltonian_cycle']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
-    for i in range(100000):
+    for i in range(10000):
+        print(i)
         p = subprocess.Popen(['python3', 'gnm.py'], 
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        out, err = p.communicate(input=b'9 18')
+        out, err = p.communicate(input=b'9 27')
         p = subprocess.Popen(['./chromatic_number.o'], 
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         x, err = p.communicate(input=out)
