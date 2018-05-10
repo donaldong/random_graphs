@@ -46,6 +46,7 @@ struct node {
 };
 
 int X;
+vector<int> RES;
 
 bool dfs(node *n) {
     vector<bool> C(X, false);
@@ -76,7 +77,11 @@ bool dfs(node *n) {
 bool colorable(vector<node> &N, int x) {
     X = x;
     rep(i, 0, N.size()) N[i].col = -1;
-    return dfs(&N[0]);
+    if (dfs(&N[0])) {
+        rep(i, 0, N.size()) RES[i] = N[i].c;
+        return true;
+    }
+    return false;
 }
 
 int main() {
@@ -85,6 +90,7 @@ int main() {
     int n;
     cin >> n;
     vector<node> N(n); 
+    RES = vector<int>(n);
     int max_degree = 0;
     cin.ignore();
     rep(i, 0, n) {
@@ -106,7 +112,7 @@ int main() {
         else lo = col + 1;
     }
     cout << lo << endl;
-    for (auto &e : N) cerr << e.c << " ";
+    for (auto &e : RES) cerr << e << " ";
     cerr << endl;
     return 0;
 }
